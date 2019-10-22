@@ -120,7 +120,8 @@ sixsthTask.addEventListener("click", function () {
 
 seventhTask.addEventListener("click", function () {
     console.log(0 == null);
-    console.log(0 === null);
+    console.log(null > 0);
+    console.log(null >= 0);
 });
 
 eighthTask.addEventListener("click", function () {
