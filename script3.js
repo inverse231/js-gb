@@ -1,7 +1,7 @@
 var prime = document.querySelector(".prime__task");
 var cart = document.querySelector(".cart__task");
 var cycle = document.querySelector(".for__task");
-var stringTask = document.querySelector("str__task");
+var stringTask = document.querySelector(".str__task");
 
 
 //1
@@ -28,8 +28,8 @@ function printNums(num) {
     }
     console.log(list);
 }
-prime.addEventListener("click", printNums(100));
 
+prime.addEventListener("click", () => {printNums(100);});
 //2
 
 function countCartSum(items) {
@@ -59,7 +59,7 @@ stringTask.addEventListener("click", function () {
 
     for (var i = 0; i < 20; i++) {
         str += "x";
-        document.write(str + "<br>");
+        //document.write(str + "<br>");
         console.log(str);
     }
 });
