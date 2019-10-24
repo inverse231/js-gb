@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,36 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <button class="first__task task">Первое задание</button>
-    <button class="second__task task">Второе задание</button>
-    <button class="third__task task">Третье задание</button>
-    <button class="fourth__task task">Четвертое задание</button>
+    <div class="first__hw hw">
+        <h2>Первое домашнее задание</h2>
+        <button class="first__task task">Первое задание</button>
+        <button class="second__task task">Второе задание</button>
+        <button class="third__task task">Третье задание</button>
+        <button class="fourth__task task">Четвертое задание</button>
+    </div>
+    <div class="second__hw hw">
+        <h2>Второе домашнее задание</h2>
+        <button class="first__task task">Первое задание</button>
+        <p>c = ++a; alert(c);           // 2  -- так как присутствует префиксный инкремент, который сначала увеличивает переменную, после чего другая переменная присваивает значение</p>
+        <p>d = b++; alert(d);           // 1 -- так как присутствует постфиксный инкремент, при котором сначала происходит присваивание значение переменной d, а после увеличение a на 1</p>
+        <p>c = (2+ ++a); alert(c);      // 5 -- аналогично первой записи с префиксным инкрементом</p>
+        <p>d = (2+ b++); alert(d);      // 4 -- аналогично второй записи с постфиксным инкрементом</p>
+        <p>alert(a);                    // 3 -- значение переменных увеличилось, так как инкремент равнозначен a=a+1;</p>
+        <button class="second__task task">Второе задание</button>
+        <p>x = 5, т.к. сначала происходит умножение на 2 и присваивание значение переменной а, после сумма.</p>
+        <button class="if__task task">Третье задание</button>
+        <button class="rand__task task">Четвертое задание</button>
+        <button class="func__task task">Пятое задание</button>
+        <button class="mathfunc__task task">Шестое задание</button>
+        <button class="null__task task">Седьмое задание</button>
+        <p>При нестрогом равенстве null ни к чему не приводится, поэтому false. Сравнение преобразует null в число, поэтому null >= 0 дает true.</p>
+        <button class="recursive__task task">Восьмое задание</button>
+
+    </div>
 </body>
+
 </html>
-<script src="script.js"></script>
+<script defer src="script1.js"></script>
+<script defer src="script2.js"></script>
