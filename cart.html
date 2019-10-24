@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Cart</title>
+</head>
+
+<body>
+    <h1>Корзина товаров</h1>
+    <div class="items">
+        <div class="item">
+            <h1>Товар</h1>
+            <img src="1.jpg" alt="" width="330" height="225">
+            <span class="price"></span>
+        </div>
+        <div class="item">
+            <h1>Товар</h1>
+            <img src="1.jpg" alt="" width="330" height="225">
+            <span class="price"></span>
+        </div>
+        <div class="item">
+            <h1>Товар</h1>
+            <img src="1.jpg" alt="" width="330" height="225">
+            <span class="price"></span>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var price = document.querySelectorAll('.price');
+    var cartArr = [];
+
+    for (var i = 0; i < price.length; i++) {
+        price[i].innerHTML = cartArr[i] = parseInt(Math.random() * 1000 + 300);
+    }
+
+    function countCartSum(items) {
+        var sum = 0;
+        for (var i = 0; i < items.length; i++) {
+            sum += items[i];
+        }
+        return sum;
+    }
+
+    document.write("Сумма покупок = " + countCartSum(cartArr));
+</script>
