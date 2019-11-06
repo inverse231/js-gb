@@ -1,53 +1,48 @@
-var cart = document.querySelector(".cart");
-
-var itemName1 = document.createElement("span");
-var itemName2 = document.createElement("span");
-var itemName3 = document.createElement("span");
-itemName1.innerText = "first";
-itemName2.innerText = "second";
-itemName3.innerText = "third";
-
-
-var firstCountSpan = document.createElement("span");
-var secondCountSpan = document.createElement("span");
-var thirdCountSpan = document.createElement("span");
-
-var firstButton = document.getElementById("first");
-var secondButton = document.getElementById("second");
-var thirdButton = document.getElementById("third");
-
-var thirdCount = 0;
-var firstCount = 0;
-var secondCount = 0;
-
-
-cart.appendChild(itemName1);
-cart.appendChild(firstCountSpan);
-cart.appendChild(itemName2);
-cart.appendChild(secondCountSpan);
-cart.appendChild(itemName3);
-cart.appendChild(thirdCountSpan);
-
-firstButton.addEventListener("click", function () {
-    firstCount++;
-
-    firstCountSpan.innerText = firstCount;
-});
-
-secondButton.addEventListener("click", function () {
-    secondCount++;
-
-    secondCountSpan.innerText = secondCount;
-});
-
-
-thirdButton.addEventListener("click", function () {
-    thirdCount++;
-
-    thirdCountSpan.innerText = thirdCount;
-});
-
-var spans = document.getElementsByTagName("span");
-for(var i = 0; i < spans.length;i++) {
-    spans[i].className.add(".item");
+var itemObject1 = {
+    name: "first",
+    price: "100",
+    src: "img/first.png"
 }
+
+var itemObject2 = {
+    name: "second",
+    price: "50",
+    src: "img/second.png"
+}
+
+var itemObject3 = {
+    name: "third",
+    price: "200",
+    src: "img/third.png"
+}
+
+var itemArray = [itemObject1, itemObject2, itemObject3];
+var sum = 0;
+
+function init() {
+    var catalog = document.querySelector(".catalog");
+    for (var i = 0; i < itemArray.length; i++) {
+        var item = document.createElement("div");
+
+        var itemImg = document.createElement("img");
+        itemImg.src = itemArray[i].src;
+        item.appendChild(itemImg);
+
+        item.appendChild(document.createTextNode(itemArray[i].name));
+
+        var itemBtn = document.createElement("button");
+        itemBtn.setAttribute("id", i);
+        itemBtn.onclick = addItem;
+        itemBtn.innerText = "buy";
+        item.appendChild(itemBtn);
+
+        item.classList.add("item");
+        catalog.appendChild(item);
+    }
+}
+
+function addItem(obj){
+    var selectedItem = itemArray[(obj.target.id) - 1];
+}
+
+window.onload = init;
