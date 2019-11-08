@@ -23,7 +23,7 @@ document.body.appendChild(div);
 
 fwdButton.addEventListener("click", function () {
 
-    if (i == imgArray.length) {
+    if (i == imgArray.length - 1) {
         imgArray[i].classList.remove("visible");
         i = 0;
         imgArray[i].classList.add("visible");
@@ -35,15 +35,13 @@ fwdButton.addEventListener("click", function () {
 });
 
 backButton.addEventListener("click", function () {
-
-
-});
-
-function changePhoto(button) {
-    if (button.id == "f") {
-        imgArray[i++].classList.remove("visible");
-        imgArray[i - 1].classList.add("visible");
+    if (i == 0) {
+        imgArray[i].classList.remove("visible");
+        i = imgArray.length - 1;
+        imgArray[i].classList.add("visible");
     } else {
-
+        imgArray[i].classList.remove("visible");
+        imgArray[--i].classList.add("visible");
     }
-}
+    console.log(i, imgArray.length);
+});

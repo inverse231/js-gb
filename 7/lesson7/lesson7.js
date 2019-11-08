@@ -10,6 +10,7 @@ var food_timer; // Таймер для еды
 var score = 0; // Результат
 var scoreSpan = document.createElement("span");
 scoreSpan.innerText = "Счет: " + score;
+scoreSpan.classList.add("score");
 var bomb = [];
 
 function init() {
