@@ -182,7 +182,16 @@ function haveFood(unit) {
         check = true;
         createFood();
 
-        scoreSpan.innerText = "Счет: " + parseInt(++score);
+
+        function getCount() {
+            let counter = 0;
+            return function () {
+                return counter++;
+            }
+        }
+        var count = getCount();
+        scoreSpan.innerText = "Счет: " + parseInt(count());
+        //scoreSpan.innerText = "Счет: " + parseInt(++score);
     }
     return check;
 }
