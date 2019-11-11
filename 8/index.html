@@ -1,3 +1,6 @@
+<p>В задании из 7 практикума применить замыкание можно в реализации счетчика.</p>
+<p></p>
+
 <script>
     /*if (!("a" in window)) {
         var a = 1;
@@ -10,22 +13,22 @@
     alert(a); //ошибка, так как b - функциональное выражение, функция а недоступна снаружи
     */
     /*
-        function a(x) {
-            return x * 2;
-        }
-        var a;
-        alert(a); //выведет функцию а(х)
+    function a(x) {
+        return x * 2;
+    }
+    var a;
+    alert(a); //выведет функцию а(х)
 
 
-        function b(x, y, a) {
-            arguments[2] = 10;
-            alert(a);
-        }
-        b(1, 2, 3); //10
-*/
-        function a() {
-            alert(this);
-        }
-        a.call(null); //window
-        
+    function b(x, y, a) {
+        arguments[2] = 10;
+        alert(a);
+    }
+    b(1, 2, 3); //10
+
+    function a() {
+        alert(this);
+    }
+    a.call(null); //window
+    */
 </script>
