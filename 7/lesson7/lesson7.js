@@ -154,6 +154,14 @@ function move() {
     }
 }
 
+
+function getCount() {
+    let counter = 1;
+    return function () {
+        return counter++;
+    }
+}
+score = getCount();
 /**
  * Проверка на змейку
  * @param unit
@@ -182,10 +190,14 @@ function haveFood(unit) {
         check = true;
         createFood();
 
-        scoreSpan.innerText = "Счет: " + parseInt(++score);
+
+        scoreSpan.innerText = "Счет: " + score();
+        //scoreSpan.innerText = "Счет: " + parseInt(++score);
     }
     return check;
 }
+
+
 
 /**
  * Создание еды
@@ -279,7 +291,8 @@ function changeDirection(e) {
 function finishTheGame() {
     gameIsRunning = false;
     clearInterval(snake_timer);
-    alert('Вы проиграли! Ваш результат: ' + score.toString());
+    var result = scoreSpan.textContent.split(":")[1];
+    alert('Вы проиграли! Ваш результат: ' + result.toString());
 }
 
 /**
